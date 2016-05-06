@@ -1,7 +1,9 @@
+%define _disable_lto 1
+
 Summary:	Door to the 'donkey' network
 Name:		mldonkey
 Version:	3.1.5
-Release:	7
+Release:	8
 Epoch:		1
 License:	GPLv2+
 Group:		System/Servers
@@ -19,6 +21,8 @@ Source8:	mldonkey_df_monitor.crond
 Source9:	mldonkey_df_monitor.sh
 Source10:	mlgui.sh
 Source11:	mldonkey.logrotate
+Patch1:		0001-Fix-mldonkey-FTBFS-under-gcc-5.patch
+Patch2:		0002-Fix-broken-quoted-string-syntax-under-ocaml-4.02.patch
 BuildRequires:	camlp4
 BuildRequires:	ocaml
 BuildRequires:	ocaml-findlib
@@ -174,6 +178,7 @@ You need to edit /etc/sysconfig/mldonkey_submit
 
 %prep
 %setup -q
+%apply_patches
 
 %build
 # Looks like autoconf, but isn't -- don't use the
@@ -182,7 +187,8 @@ CFLAGS="%{optflags}" CXXFLAGS="%{optflags}" \
 ./configure \
 	--prefix=%{_prefix} \
 	--libdir=%{_libdir} \
-	--enable-gui
+	--enable-gui \
+	--disable-gd
 make
 
 %install
