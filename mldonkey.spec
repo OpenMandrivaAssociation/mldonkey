@@ -23,7 +23,7 @@ Source10:	mlgui.sh
 Source11:	mldonkey.logrotate
 Patch1:		0001-Fix-mldonkey-FTBFS-under-gcc-5.patch
 Patch2:		0002-Fix-broken-quoted-string-syntax-under-ocaml-4.02.patch
-BuildRequires:	camlp4
+BuildRequires:	ocaml-camlp4-devel
 BuildRequires:	ocaml
 BuildRequires:	ocaml-findlib
 BuildRequires:	ocaml-lablgtk2-devel
