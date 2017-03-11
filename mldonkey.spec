@@ -2,13 +2,13 @@
 
 Summary:	Door to the 'donkey' network
 Name:		mldonkey
-Version:	3.1.5
-Release:	8
+Version:	3.1.6
+Release:	1
 Epoch:		1
 License:	GPLv2+
 Group:		System/Servers
 Url:		http://sourceforge.net/projects/mldonkey/
-Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+Source0:	https://github.com/ygrek/mldonkey/releases/download/release-%(echo %{version} |sed -e 's,\.,-,g')/mldonkey-%{version}.tar.bz2
 #http://savannah.nongnu.org/download/mldonkey/%{name}-%{version}.tar.bz2
 Source1:	%{name}-icon-16.png
 Source2:	%{name}-icon-32.png
@@ -21,8 +21,6 @@ Source8:	mldonkey_df_monitor.crond
 Source9:	mldonkey_df_monitor.sh
 Source10:	mlgui.sh
 Source11:	mldonkey.logrotate
-Patch1:		0001-Fix-mldonkey-FTBFS-under-gcc-5.patch
-Patch2:		0002-Fix-broken-quoted-string-syntax-under-ocaml-4.02.patch
 BuildRequires:	ocaml-camlp4-devel
 BuildRequires:	ocaml
 BuildRequires:	ocaml-findlib
