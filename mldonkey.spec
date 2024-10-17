@@ -7,7 +7,7 @@ Release:	1
 Epoch:		1
 License:	GPLv2+
 Group:		System/Servers
-Url:		http://sourceforge.net/projects/mldonkey/
+Url:		https://sourceforge.net/projects/mldonkey/
 Source0:	https://github.com/ygrek/mldonkey/releases/download/release-%(echo %{version} |sed -e 's,\.,-,g')/mldonkey-%{version}.tar.bz2
 #http://savannah.nongnu.org/download/mldonkey/%{name}-%{version}.tar.bz2
 Source1:	%{name}-icon-16.png
