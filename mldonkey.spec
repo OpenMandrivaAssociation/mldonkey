@@ -22,6 +22,11 @@ Source9:	mldonkey_df_monitor.sh
 Source10:	mlgui.sh
 Source11:	mldonkey.logrotate
 Patch0:		https://github.com/ygrek/mldonkey/commit/6952c2165a498080d2f52ee0a3644730a281fce5.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	ocaml-camlp4-devel
 BuildRequires:	ocaml
 BuildRequires:	ocaml-findlib
